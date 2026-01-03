@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.school</groupId>
+    <artifactId>sms-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>school-management-system</name>
+    <description>Parent project for School Management System</description>
+
+    <!-- ================= PROPERTIES ================= -->
+    <properties>
+        <java.version>17</java.version>
+        <spring.boot.version>3.2.1</spring.boot.version>
+    </properties>
+
+    <!-- ============== DEPENDENCY MANAGEMENT ============== -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Spring Boot BOM -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.30</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Internal modules (VERY IMPORTANT) -->
+            <dependency>
+                <groupId>com.school</groupId>
+                <artifactId>sms-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.school</groupId>
+                <artifactId>sms-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.school</groupId>
+                <artifactId>sms-auth</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.school</groupId>
+                <artifactId>sms-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- ================= BUILD ================= -->
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <!-- Compiler -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.13.0</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+
+                <!-- Spring Boot Plugin (CRITICAL) -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <!-- ================= MODULES ================= -->
+    <modules>
+        <module>sms-core</module>
+        <module>sms-common</module>
+        <module>sms-auth</module>
+        <module>sms-service</module>
+        <module>sms-api</module>
+        <module>sms-batch</module>
+        <module>sms-pdf</module>
+        <module>sms-kafka</module>
+        <module>sms-aop</module>
+        <module>sms-scheduler</module>
+    </modules>
+
+</project>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.school</groupId>
+        <artifactId>sms-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>sms-scheduler</artifactId>
+    <name>sms-scheduler</name>
+    <description>Scheduler module for School Management System</description>
+
+    <dependencies>
+
+        <!-- Spring Scheduler -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Internal modules -->
+        <dependency>
+            <groupId>com.school</groupId>
+            <artifactId>sms-service</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.school</groupId>
+            <artifactId>sms-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.school</groupId>
+            <artifactId>sms-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.11.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
